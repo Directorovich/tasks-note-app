@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<div class="app-notes">
+    <div class="notes-block" id="notes-block">
+        <!--список-->
+        <div class="header-notes-block">
+            <!--название столбцов-->
+            <div class="item-header-notes">Name</div>
+            <div class="item-header-notes">Created</div>
+            <div class="item-header-notes">Category</div>
+            <div class="item-header-notes">Content</div>
+            <div class="item-header-notes">Dates</div>
+            <div class="item-header-notes">
+                <!-- <button class="unarchive" id="unarchive-button">unarh</button> -->
+                <img class="unarchive" title="sdhfk" id="unarchive-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Grey_archive_icon_%28Wikiproject_icons%29.svg/2048px-Grey_archive_icon_%28Wikiproject_icons%29.svg.png" alt="archive note">
+                <!-- <button class="destroy-all" id="destroy-all-button">del all</button> -->
+                <img class="destroy-all" id="destroy-all-button" src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/delete.png" alt="delete note">
+            </div>
+        </div>
+        <!--блок заметок-->
+        <div class="body-notes-block" id="body-notes-block"> 
+            <!--заметки-->
+            <div class="note-task" >
+                <!--элемент заметки-->
+                <div class="name-note">Read</div>
+                <div class="date-created-note">11.08.2018</div>
+                <div class="category-note">Task</div>
+                <div class="content-note">New book</div>
+                <div class="date-note">12.08.2018</div>
+                <div class="button-setting-note">picture</div>
+            </div>
+
+            <div class="note-task row-template" >
+                <!--элемент заметки-->
+                <div data-component="cell"> 
+                    <div class="hidden">Value</div>
+                    <input type="text" name="name">
+                </div>
+                <div data-component="cell">
+                    <div class="hidden">Value</div>
+                    <input type="date" name="date-created">
+                </div>
+                <div data-component="cell">
+                    <div class="hidden">Value</div>
+                    <select name="category">
+                        <option value="Tasks">Tasks</option>
+                        <option value="Random Thought">Random Thought</option>
+                        <option value="Idea">Idea</option>
+                    </select>
+                </div>
+                <div data-component="cell">
+                    <div class="hidden">Value</div>
+                    <textarea type="text" name="content"></textarea>
+                </div>
+                <div data-component="cell">
+                    <div class="hidden">Value</div>
+                    <input type="date" name="date-ending">
+                </div>
+                <div class="action-buttons" data-component="action-buttons">
+                    <div class="hidden">
+                        <!-- <button data-component="edit-button" >edit</button> -->
+                        <img title="sdhfk" data-component="edit-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr.svg/1024px-OOjs_UI_icon_edit-ltr.svg.png" alt="edit note">
+                        <!-- <button data-component="archive-button" >arch</button> -->
+                        <img data-component="archive-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Grey_archive_icon_%28Wikiproject_icons%29.svg/2048px-Grey_archive_icon_%28Wikiproject_icons%29.svg.png" alt="archive note">
+                        <!-- <button data-component="delete-button" >del</button> -->
+                        <img data-component="delete-button" src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/delete.png" alt="delete note">
+                    </div>
+                    <div>
+                        <!-- <button data-component="add-button">add</button> -->
+                        <img data-component="add-button" src="https://cdn-icons-png.flaticon.com/512/63/63747.png" alt="delete note">
+                        <!-- <button data-component="delete-button">del</button> -->
+                        <img data-component="delete-button" src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/delete.png" alt="delete note">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="button-notes-block">
+            <button id="create-button">create</button>
+        </div>
+    </div>
+    <div class="archive-block">
+        <div class="header-archive-block">
+            <div class="item-header-archive">Note Category</div>
+            <div class="item-header-archive">Active</div>
+            <div class="item-header-archive">Archived</div>
+        </div>
+        <div class="body-archive-block">
+            <div class="item-archive-block" data-component="row-archive-task">
+                <div class="name-note-category" id="task-category">Task</div>
+                <div class="count-active-notes" id="count-active-task">13</div>
+                <div class="count-archived-notes" id="count-archived-task">20</div>
+            </div>
+            <div class="item-archive-block" data-component="row-archive-random">
+                <div class="name-note-category">Random Thought</div>
+                <div class="count-active-notes" id="count-active-random">13</div>
+                <div class="count-archived-notes" id="count-archived-random">20</div>
+            </div>
+            <div class="item-archive-block" data-component="row-archive-idea">
+                <div class="name-note-category">ideas</div>
+                <div class="count-active-notes" id="count-active-idea">13</div>
+                <div class="count-archived-notes" id="count-archived-idea">20</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
+
+
+
