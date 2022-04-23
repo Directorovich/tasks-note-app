@@ -98,6 +98,8 @@ function onCreateNoteButton() {
     }
     function onDeleteButton() {
         let nowSelect= newNote.querySelector('select').value;
+
+
         if (nowSelect==='Tasks'){
             countActiveTasks--;
         } else if (nowSelect=== 'Random Thought'){
@@ -105,6 +107,8 @@ function onCreateNoteButton() {
         } else if (nowSelect==='Idea') {
             countActiveIdeas--;
         };
+
+
         console.log('tasks '+countActiveTasks);
         console.log('random '+countActiveRandomThought);
         console.log('idea '+countActiveIdeas);
