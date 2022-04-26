@@ -1,5 +1,3 @@
-//(true? textDiv:textInput);
-
 let countArvhiveTasks = 0;
 let countActiveTasks = 0;
 
@@ -58,20 +56,33 @@ function onCreateNoteButton() {
             }
         });
 
+        function chooseCategory(selectedCategory){
+        const archiveBlock = document.querySelector('.body-archive-block');
+        const nowCotegory = document.querySelector('[data-category-info="' + selectedCategory + '"]');
+        if (nowCotegory===null){
+            const rowArchiveBlock = archiveBlock.querySelector('[data-component="row-archive-template"]');
+            const newArchiveCategory = rowArchiveBlock.cloneNode(true);
+            newArchiveCategory.setAttribute('data-category-info', selectedCategory);
+            newArchiveCategory.classList.remove('hidden');
+            newArchiveCategory.querySelector('.name-note-category').innerHTML = selectedCategory;
+            newArchiveCategory.querySelector('.count-active-notes').innerHTML = 1;
+            newArchiveCategory.querySelector('.count-archived-notes').innerHTML = 0;
+
+        } else {
+            let value = nowCotegory.querySelector('.count-active-notes').innerHTML;
+            nowCotegory.querySelector('.count-active-notes').innerHTML = Number.parseInt(value)++;
+        }
+        }
+
         
         let nowSelect= newNote.querySelector('select').value;
-        if (nowSelect==='Tasks'){
-            countActiveTasks++;
-        } else if (nowSelect=== 'Random Thought'){
-            countActiveRandomThought++;
-        } else if (nowSelect==='Idea') {
-            countActiveIdeas++;
-        };
+        chooseCategory(nowSelect);
+        
         console.log('tasks '+countActiveTasks);
         console.log('random '+countActiveRandomThought);
         console.log('idea '+countActiveIdeas);
 
-        checkActiveAndArchive();
+        //checkActiveAndArchive();
     };
 
     function checkActiveAndArchive(){
@@ -99,7 +110,6 @@ function onCreateNoteButton() {
     function onDeleteButton() {
         let nowSelect= newNote.querySelector('select').value;
 
-
         if (nowSelect==='Tasks'){
             countActiveTasks--;
         } else if (nowSelect=== 'Random Thought'){
@@ -108,12 +118,11 @@ function onCreateNoteButton() {
             countActiveIdeas--;
         };
 
-
         console.log('tasks '+countActiveTasks);
         console.log('random '+countActiveRandomThought);
         console.log('idea '+countActiveIdeas);
         newNote.remove();
-        checkActiveAndArchive();
+        //checkActiveAndArchive();
     };
 
     function onEditButton() {
@@ -265,7 +274,7 @@ function destroyAllOnClickButton(){
     destroyButtons = null; //all destroy buttons
     archiveButtons = null;
     editButtons = null;
-    countActiveNote(countActiveTasks);
+    //countActiveNote(countActiveTasks);
 }
 
 function countActiveNote(countActiveTasks) {
@@ -277,5 +286,6 @@ function countArchiveNote(countArvhiveTasks) {
     countArchiveTaskEl.innerHTML = countArvhiveTasks;
 }
 
-countActiveNote(countActiveTasks);
-countArchiveNote(countArvhiveTasks);
+//countActiveNote(countActiveTasks);
+//countArchiveNote(countArvhiveTasks);
+

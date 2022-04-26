@@ -1,7 +1,6 @@
 .app-notes{
     display: grid;
     color: white;
-    /*grid-template-rows: 7fr 1fr;*/
     text-align: center;
 
 }
@@ -12,7 +11,9 @@
     background-color: gray;
 }
 .body-notes-block {
-    height: 300px;
+    min-height: 300px;
+    height: auto;
+    padding: 10px;
     background-color: cadetblue;
 }
 
@@ -23,13 +24,20 @@
     background-color: gray;
 }
 .body-archive-block {
-    height: 150px;
+    height: auto;
     background-color: cadetblue;
 
 }
 .note-task {
     display: grid;
     grid-template-columns: 3fr 2fr 2fr 3fr 2fr 1fr;
+    background-color: gray;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    opacity: 0,1;
 }
 .item-archive-block{
     display: grid;
